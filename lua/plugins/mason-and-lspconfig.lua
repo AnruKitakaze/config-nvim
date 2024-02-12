@@ -4,7 +4,7 @@ return {
       dependencies = {
         "WhoIsSethDaniel/mason-tool-installer.nvim",
       },
-      config = function()
+      opts = function()
         local mason = require("mason")
         local mason_tool_installer = require("mason-tool-installer")
 

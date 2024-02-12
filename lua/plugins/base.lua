@@ -16,7 +16,7 @@ return {
     opts = {
     },
     -- TODO: set it up
-    config = function()
+    opts = function()
       vim.keymap.set("n", "]t", function()
         require("todo-comments").jump_next()
       end, { desc = "Next todo comment" })

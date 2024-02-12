@@ -12,7 +12,7 @@ return {
             'nvim-telescope/telescope-fzf-native.nvim', 
         },
 
-        config = function()
+        opts = function()
             require("telescope").setup({
                 extensions = {
                 fzf = {
