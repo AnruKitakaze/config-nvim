@@ -37,9 +37,9 @@ return {
             )
             vim.keymap.set(
                 'n', '<leader>fs', function()
-                    builtin.grep_string({ search = vim.fn.input("Grep > ") })
+                    builtin.grep_string({ search = vim.fn.input("RipGrep > ") })
                 end,
-                { desc = "Telescope: Grep Search" }
+                { desc = "Telescope: RipGrep Search" }
             )
             vim.keymap.set(
                 'n', '<leader>fh', builtin.help_tags, 
