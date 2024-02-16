@@ -14,6 +14,8 @@ vim.opt.expandtab = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 
+vim.opt.colorcolumn = '88'
+
 -- Set smart indenting
 -- Enable break indent
 vim.o.breakindent = true

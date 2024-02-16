@@ -9,7 +9,7 @@ return {
 --        end,
     },
     {
-        "rose-pine/neovim", 
+        "rose-pine/neovim",
         name = "rose-pine",
 --        config = function()
 --            -- load the colorscheme here
@@ -25,12 +25,13 @@ return {
 --            vim.cmd([[colorscheme catppuccin]])
 --        end,
     },
-    { 
+    {
         "luisiacc/gruvbox-baby",
         priority = 1000,
         config = function()
             -- load the colorscheme here
             vim.cmd([[colorscheme gruvbox-baby]])
+            vim.cmd([[highlight ColorColumn guibg=#3c3836]])
         end,
     },
     {
