@@ -8,6 +8,8 @@ return {
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
         "hrsh7th/nvim-cmp",
+        "L3MON4D3/LuaSnip",
+        "saadparwaiz1/cmp_luasnip",
         "j-hui/fidget.nvim",
     },
 
@@ -26,6 +28,7 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "ruff_lsp",
+                "pyright",
             },
             handlers = {
                 function(server_name)
@@ -49,16 +52,22 @@ return {
                 end,
 
                 ["ruff_lsp"] = function()
-                    local on_attach = function(client, bufnr)
-                      -- Your on_attach function here, if needed
-                    end
-
                     local lspconfig = require("lspconfig")
                     lspconfig.ruff_lsp.setup {
-                      on_attach = on_attach,
                       init_options = {
                         settings = {
                           -- Any extra CLI arguments for `ruff` go here.
+                          args = {},
+                        }
+                      }
+                    }
+                end,
+
+                ["pyright"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.pyright.setup {
+                      init_options = {
+                        settings = {
                           args = {},
                         }
                       }
@@ -70,15 +79,22 @@ return {
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
         cmp.setup({
+            snippet = {
+                expand = function(args)
+                    require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+                end,
+            },
             mapping = cmp.mapping.preset.insert({
                 ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
                 ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-                ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+                ["<Tab>"] = cmp.mapping.confirm({ select = true }),
                 ["<C-Space>"] = cmp.mapping.complete(),
             }),
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
+                { name = 'luasnip' },
                 { name = 'ruff_lsp' },
+                { name = 'pyright' },
             }, {
                 { name = 'buffer' },
             })
