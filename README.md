@@ -19,7 +19,7 @@ LSP stuff:
     - [x] Formatter: `Ruff` (LSP)
     - [ ] Navigation: `Pyright`
         - There's a problem with jumping to fixture definition in tests,
-        everything else seems is okay for now.
+        everything else seems okay for now.
     - [x] Autocompletion: `Pyright`
 
 - [x] Lua:
