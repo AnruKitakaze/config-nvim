@@ -4,10 +4,10 @@ require("anru.remap")
 
 require("anru.init_lazy")
 
--- Autouse group to remove trailing space on save
 local augroup = vim.api.nvim_create_augroup
 local AnruGroup = augroup('Anru', {})
 
+-- Remove trailing space on save
 local autocmd = vim.api.nvim_create_autocmd
 autocmd({"BufWritePre"}, {
     group = AnruGroup,
@@ -16,7 +16,7 @@ autocmd({"BufWritePre"}, {
 })
 
 autocmd('LspAttach', {
-    group = ThePrimeagenGroup,
+    group = AnruGroup,
     callback = function(e)
         local opts = { buffer = e.buf }
         vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
