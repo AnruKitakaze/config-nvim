@@ -20,7 +20,8 @@ return {
             "force",
             {},
             vim.lsp.protocol.make_client_capabilities(),
-            cmp_lsp.default_capabilities())
+            cmp_lsp.default_capabilities()
+        )
 
         require("fidget").setup({})
         require("mason").setup()
@@ -75,6 +76,10 @@ return {
                 end,
             }
         })
+        -- NOTE: Mojo is not available in mason yet
+        require("lspconfig").mojo.setup({
+            capabilities=capabilities,
+        })
 
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
@@ -95,6 +100,7 @@ return {
                 { name = 'luasnip' },
                 { name = 'ruff_lsp' },
                 { name = 'pyright' },
+                { name = 'mojo' },
             }, {
                 { name = 'buffer' },
             })
