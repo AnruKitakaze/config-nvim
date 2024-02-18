@@ -12,6 +12,9 @@ return {
         "saadparwaiz1/cmp_luasnip",
         "j-hui/fidget.nvim",
     },
+    opts = {
+        inlay_hints = { enabled = true },
+    },
 
     config = function()
         local cmp = require('cmp')
@@ -73,6 +76,18 @@ return {
                           args = {},
                         }
                       }
+                    }
+                end,
+
+
+                ["gopls"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.gopls.setup {
+                        settings = {
+                            gopls = {
+                                semanticTokens = true,
+                            }
+                        }
                     }
                 end,
             }
