@@ -54,6 +54,18 @@ vim.api.nvim_create_autocmd("CmdlineLeave", {
   callback = function() vim.o.hlsearch = false end
 })
 
+-- TODO: Delete this after mojo filetype detection will be added by default
+-- For now mojo filetype cannot be detected by neovim, so I do it manually
+local mojoFileTypeGroup = vim.api.nvim_create_augroup('MojoFileType', { clear = true })
+
+vim.api.nvim_create_autocmd({"BufRead","BufNewFile"}, {
+    pattern = { '*.mojo' },
+    callback = function()
+        vim.bo.filetype = 'mojo'
+    end,
+    group = mojoFileTypeGroup,
+})
+
 -- TODO: Find better place for this one
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
