@@ -1,17 +1,8 @@
 # config-nvim
-My personal NeoVim configuration
+My personal NeoVim configuration not bloated with useless plugins. Only
+the ones I really need and use.
 
 ## Plans:
-
-- [x] Core
-    - [x] `lazy` package manager
-    - [x] `mason`
-    - [x] `treesitter`
-    - [x] `telescope`
-    - [x] `fugitive` + `gitsigns`
-- [x] LSP:
-    - [x] `lspconfig` + `mason-lspconfig`
-    - [x] `cmp` for autocompletion (feat. `LuaSnip`)
 
 LSP stuff:
 - [ ] Python
@@ -23,19 +14,12 @@ LSP stuff:
         - There's a problem with Django ORM typing.
     - [x] Autocompletion: `Pyright`
 
-- [x] Lua:
-    - Base functionality via `lua_ls`. Navigation and autocompletion seems
-    fine to me for now.
-
 - [ ] Mojo:
     - [x] Using `mojo` with `lspconfig` + `mojo-lsp-server`, slow but working.
     - [ ] Remove manual mojo filetype detection after this functionality
     will be added in NeoVim by default.
     - [ ] Replace `lspconfig` config for `mason-lspconfig` insdead when
     it'll become available.
-
-- [ ] Golang:
-    - [ ] Add `gopls`.
 
 ## Installation
 Must install ripgrep for `telescope`'s live-grep:
