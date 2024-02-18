@@ -30,6 +30,7 @@ return {
                 "lua_ls",
                 "ruff_lsp",
                 "pyright",
+                "gopls",
             },
             handlers = {
                 function(server_name)
@@ -101,6 +102,7 @@ return {
                 { name = 'ruff_lsp' },
                 { name = 'pyright' },
                 { name = 'mojo' },
+                { name = 'gopls' },
             }, {
                 { name = 'buffer' },
             })
