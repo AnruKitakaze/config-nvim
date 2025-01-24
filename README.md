@@ -22,10 +22,21 @@ LSP stuff:
     it'll become available.
 
 ## Installation
-Must install ripgrep for `telescope`'s live-grep:
 
+1. Must install ripgrep for `telescope`'s live-grep:
 ```
-sudo nala install ripgrep
+sudo apt install ripgrep
+```
+2. `telescope` will crash because of fzf-native isn't built.
+I have no idea right now how to make Lazy build it automatically, so here's a
+temporary fix:
+(GitHub Issue comment:)[https://github.com/LazyVim/LazyVim/issues/2464#issuecomment-2185070943]
+> Run :lazy.
+> Select "telescope-fzf-native.nvim" and press Enter
+> Hit the Keys g and b
+3. You need `xclip`/`xsel`/`wl-clipboard` to use clipboard by default:
+```
+sudo apt install xclip
 ```
 
 ### LSP stuff
