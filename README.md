@@ -1,17 +1,6 @@
 # config-nvim
 
-My personal NeoVim configuration not bloated with useless plugins. Only the ones
-I really need and use.
-
-## Plans
-
-LSP stuff:
-
-- [ ] Python
-    - [x] Linter: `Ruff` (LSP)
-    - [x] Formatter: `Ruff` (LSP)
-    - [ ] Navigation: `Pyright`
-    - [x] Autocompletion: `Pyright`
+My personal NeoVim configuration. Only things I really need.
 
 ## Installation
 
@@ -27,19 +16,9 @@ LSP stuff:
    comment)[https://github.com/LazyVim/LazyVim/issues/2464#issuecomment-2185070943]
     > Run :lazy. Select "telescope-fzf-native.nvim" and press Enter Hit the Keys
     > g and b
-3. You need `xclip`/`xsel`/`wl-clipboard` to use clipboard by default:
+3. Make sure you have clipboard like `xclip`/`xsel`/`wl-clipboard` to use
+   clipboard by default instead of buffers:
 
     ```bash
     sudo apt install xclip
     ```
-
-### LSP stuff
-
-#### Python
-
-Install pyright and ruff-lsp
-
-```bash
-pip install ruff-lsp
-pip install pyright
-```
