@@ -21,6 +21,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Exit immedeately if in VSCode with NeoVim plugin
+-- Because some plugins will make a mess inside VSCode, bruh
+if vim.g.vscode then
+  return
+end
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
